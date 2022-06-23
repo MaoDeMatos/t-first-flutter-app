@@ -10,9 +10,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       title: 'Random name generator',
-      home: RandomWords(),
+      theme: ThemeData(
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Colors.white,
+          foregroundColor: Colors.black87,
+        ),
+      ),
+      home: const RandomWords(),
     );
   }
 }
@@ -32,8 +38,11 @@ class _RandomWordsState extends State<RandomWords> {
   void _pushSaved() {
     Navigator.of(context).push(MaterialPageRoute<void>(builder: (context) {
       final tiles = _saved.map((pair) {
-        return ListTile(title: Text(pair.asPascalCase, style: _biggerFont));
+        return ListTile(
+          title: Text(pair.asPascalCase, style: _biggerFont),
+        );
       });
+
       final divided = tiles.isNotEmpty
           ? ListTile.divideTiles(context: context, tiles: tiles).toList()
           : <Widget>[];
