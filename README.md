@@ -1,6 +1,16 @@
-# flutter_application_1
+# First Flutter app
 
-A new Flutter project.
+My first test of Flutter.
+
+## Requirements
+
+- Flutter CLI >3
+
+## Quickstart
+
+`flutter pub get` in terminal to install dependencies.
+
+`flutter run` and select the device for wich you want to build (web, local desktop or a mobile emulator).
 
 ## Getting Started
 
